@@ -12,7 +12,7 @@ Ce guide explique comment configurer votre environnement et exécuter le program
 
 ### **1.2 Mettre à jour MSYS2**
 1. Ouvrez l'application **MSYS2 MSYS**.
-2. Exécutez les commandes suivantes pour mettre à jour les packages :
+2. Exécutez la commande suivante pour mettre à jour les packages :
    ```bash
    pacman -Syu
 3. Installez le compilateur GCC et d'autres outils nécessaires avec la commande suivante :
@@ -28,9 +28,31 @@ Ce guide explique comment configurer votre environnement et exécuter le program
 
 ---
 
-## **2. Compiler et exécuter le programme**
+## **2. Télécharger ou cloner le projet depuis GitHub**
 
-### **2.1 Compiler le fichier**
+### **2.1 Cloner le dépôt GitHub**
+Si vous avez Git installé sur votre machine, vous pouvez cloner le dépôt GitHub en suivant ces étapes :
+1. Ouvrez un terminal ou MSYS2.
+2. Exécutez la commande suivante pour cloner le dépôt :
+    ```bash
+    git clone https://github.com/<NomUtilisateur>/<NomDuDepot>.git
+Remplacez <NomUtilisateur> par le nom de l'utilisateur GitHub et <NomDuDepot> par le nom du dépôt.
+
+3. Naviguez dans le répertoire cloné :
+    ```bash
+    cd <NomDuDepot>
+### **2.1 Télécharger le projet en tant qu'archive ZIP**
+Si vous ne souhaitez pas utiliser Git, vous pouvez télécharger le projet en tant qu'archive ZIP :
+1. Rendez-vous sur la page du dépôt GitHub.
+2. Cliquez sur le bouton Code (vert) en haut à droite.
+3. Sélectionnez Download ZIP.
+4. Extrayez le contenu de l'archive ZIP dans un répertoire de votre choix.
+
+---
+
+## **3. Compiler et exécuter le programme**
+
+### **3.1 Compiler le fichier**
 1. Placez le fichier graphe_logistic_json.c dans un répertoire de votre choix.
 
 2. Ouvrez MSYS2 MinGW (pas MSYS2 MSYS).
@@ -47,7 +69,7 @@ Ce guide explique comment configurer votre environnement et exécuter le program
     - cJSON.c : Le fichier source de la bibliothèque cJSON.
     - -o graphe_logistic_json : Spécifie le nom de l'exécutable généré.
 
-### **2.2 Exécuter le programme**
+### **3.2 Exécuter le programme**
 1. Une fois la compilation terminée, exécutez le programme avec la commande suivante :
     ```bash
     ./graphe_logistic_json
@@ -56,8 +78,8 @@ Ce guide explique comment configurer votre environnement et exécuter le program
 
 ---
 
-## **3. Résultats attendus**
-### **3.1 Exécuter le programme**
+## **4. Résultats attendus**
+### **4.1 Exécuter le programme**
 
 Le programme génère trois fichiers JSON dans le répertoire courant :
 
@@ -65,7 +87,7 @@ Le programme génère trois fichiers JSON dans le répertoire courant :
 - *medium_graph.json* : Réseau moyen (100-150 nœuds).
 - *large_graph.json* : Grand réseau (200+ nœuds).
 
-### **3.2 Affichage des scénarios**
+### **4.2 Affichage des scénarios**
 
 Le programme applique trois scénarios réalistes :
 
@@ -89,9 +111,3 @@ Exemple de sortie console :
     Liste d’adjacence du sommet 0
     -> 1 (distance: 45.00, coût: 500.00, fiabilité: 0.85)
 ````
----
-
-### **Explications**
-1. Ce fichier `README.md` guide l'utilisateur pour configurer **MSYS2**, compiler le fichier `.c`, et exécuter le programme en local.
-2. Il inclut des étapes détaillées pour installer les dépendances, compiler le code, et résoudre les problèmes courants.
-3. Les résultats attendus (fichiers JSON et affichage des scénarios) sont également décrits pour que l'utilisateur puisse vérifier le bon fonctionnement du programme.
